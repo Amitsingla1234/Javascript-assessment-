@@ -1,0 +1,54 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+let nftcontainer = [];
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT (name,state,position,age,party) {
+let nft = {
+    name: name,
+    state: state,
+    position: position,
+    age: age,
+    party: party,
+    
+}
+nftcontainer.push(nft);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+for(let i =0; i < nftcontainer.length; i++) {
+    console.log("\n\n--------------------POLITICIAN DATA------------------\n\n")
+    console.log("name:" + nftcontainer[i].name);
+    console.log("state:" + nftcontainer[i].state);
+    console.log("position:" + nftcontainer[i].position);
+    console.log("age:" + nftcontainer[i].age);
+    console.log("party:" + nftcontainer[i].party);
+    console.log("\n\n---------------------************-------------------\n\n");
+}
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("total nfts minted do far " + nftcontainer.length);
+}
+
+// call your functions below this line
+mintNFT("yogi adityanath","uttar pradesh","chief minister","52","bjp");
+mintNFT("nayab singh saini","haryana","chief minister","54","bjp");
+mintNFT("bhagwant mann","punjab","chief minister","50","app");
+mintNFT("nitish kumar","Bihar","chief minister","73","jd");
+listNFTs();
+getTotalSupply();
